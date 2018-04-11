@@ -52,9 +52,9 @@
                     <div class="positionSelect">
                         <select name ="specialite" id="specialite">
                             <option value="develop" selected>Dévelopement</option>
-                            <option value="develop">Marketing</option>
-                            <option value="develop">Web-design</option>
-                            <option value="develop">Intervenant</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="webdesign">Web-design</option>
+                            <option value="intervenant">Intervenant</option>
                         </select>
                     </div>
                 </form>
