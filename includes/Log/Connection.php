@@ -61,7 +61,7 @@
                 </form>
 
             </div>
-                <button>Connection</button>
+                <button>Inscription</button>
         </div>
 
     </div>
