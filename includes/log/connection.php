@@ -41,7 +41,9 @@
             <h2>Inscription</h2>
             <div class="inputbox">
                 <form value="">
-                    <input type="text" name="fullname" placeholder="  Nom & Prénom">
+                    <input type="text" name="name" placeholder="Nom">
+                    <input type="text" name="firstname" placeholder="Prénom">
+
                     <input type="text" name="email" placeholder="  EMAIL">
                     <input type="password" name="password" placeholder="  Mot de passe">
                     <div class="positionSelect">
