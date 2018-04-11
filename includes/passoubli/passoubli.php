@@ -26,6 +26,8 @@
                                 </div>
                                 <div class="form-group">
                                     <input name="recover-submit" class="btn btn-lg btn-warning btn-block" value="M'envoyer l'email" type="submit">
+                                    <input name="recover-submit" class="btn btn-lg btn-warning btn-block" value="retour" type="submit">
+
                                 </div>
 
                                 <input type="hidden" class="hide" name="token" id="token" value="">
