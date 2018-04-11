@@ -11,7 +11,7 @@ $('#switch1').on('click', function() {
 
     $signup.toggleClass('hide');
     $login.toggleClass('hide');
-})
+});
 
 $('#switch2').on('click', function() {
     $loginMsg.toggleClass("visibility");
@@ -20,12 +20,12 @@ $('#switch2').on('click', function() {
 
     $signup.toggleClass('hide');
     $login.toggleClass('hide');
-})
+});
 
 setTimeout(function(){
     $('#switch1').click()
-},1000)
+},1000);
 
 setTimeout(function(){
     $('#switch2').click()
-},3000)
+},3000);
