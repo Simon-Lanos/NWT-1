@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: MARCALBANMILLET
- * Date: 11/04/2018
- * Time: 09:53
- */
 
 class DB extends PDO
 {

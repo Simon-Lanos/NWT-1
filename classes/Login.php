@@ -1,6 +1,5 @@
 <?php
 
-
 class Login extends DB {
 
     public function connexion() {
