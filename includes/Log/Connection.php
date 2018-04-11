@@ -15,7 +15,6 @@
 
 <body>
 
-
 <div class="container">
     <div class="backbox">
         <div class="loginMsg">
@@ -48,14 +47,25 @@
         <div class="signup hide">
             <h2>Inscription</h2>
             <div class="inputbox">
-                <input type="text" name="fullname" placeholder="  Nom & Prénom">
-                <input type="text" name="email" placeholder="  EMAIL">
-                <input type="password" name="password" placeholder="  Mot de passe">
+                <form value="">
+                    <input type="text" name="fullname" placeholder="  Nom & Prénom">
+                    <input type="text" name="email" placeholder="  EMAIL">
+                    <input type="password" name="password" placeholder="  Mot de passe">
+
+                    <select name ="specialite" id="specialite">
+                        <option value="develop" selected>Dévelopement</option>
+                        <option value="develop">Marketing</option>
+                        <option value="develop">Web-design</option>
+                        <option value="develop">Intervenant</option>
+                    </select>
+                </form>
+
             </div>
-            <button>Connection</button>
+                <button>Connection</button>
         </div>
 
     </div>
+
 </div>
 
 <script  src="connect.js"></script>
