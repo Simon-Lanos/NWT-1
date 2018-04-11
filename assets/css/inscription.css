@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#mainwrapper{
+    display: flex;
+    flex-direction: column;
+    width : 50%;
+    height : 100%;
+    background-color: red;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+#formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
