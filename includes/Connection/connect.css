@@ -1,5 +1,5 @@
 body{
-    background-color: #A8A8A8;
+background-color: #4abe9d;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -85,7 +85,7 @@ body{
 
 .login h2,
 .signup h2 {
-    color: #35B729;
+    color: #ffed2e;
     font-size:22px;
 }
 
@@ -105,7 +105,7 @@ body{
 
 .login button,
 .signup button{
-    background-color: #35B729;
+    background-color: #ffed2e;
     border: none;
     color:white;
     font-size: 12px;
@@ -120,7 +120,6 @@ body{
     cursor: pointer;
 }
 
-/* Fade In & Out*/
 .login p {
     cursor: pointer;
     color:#404040;
