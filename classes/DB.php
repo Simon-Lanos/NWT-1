@@ -6,31 +6,33 @@
  * Time: 09:53
  */
 
-class DB extends PDO
+class DB
 {
 
-    const DSN = 'mysql:host=localhost;dbname=NWT';
-    const USER = 'root';
-    const PASSWORD = '';
-
-    public function __construct() {
+    // DSN : Data Source Name
+    private $dsn = "mysql:dbname=NWT;host=localhost;charset=utf8";
+    private $user = "root";
+    private $password = "";
+    private $db;
+    function __construct()
+    {
         try {
-            parent::__construct( self::DSN, self::USER, self::PASSWORD );
+            $this -> db = new PDO($this -> dsn, $this -> user, $this -> password);
+            $this -> db -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         }
-        catch ( PDOException $e ) {
-            die( 'Erreur : ' . $e->getMessage() );
+        catch (PDOException $e) {
+            Log::logWrite($e -> getMessage());
         }
     }
 
-    static public function select ( string $query, array $params = [] ) : array {
-        $bdd = new DB;
+     public function select ( string $query, array $params = [] ) : array {
 
         if ( $params ) {
-            $req = $bdd->prepare( $query );
+            $req = $this->db->prepare( $query );
             $req->execute( $params );
         }
         else {
-            $req = $bdd->query( $query );
+            $req = $this->db->query( $query );
         }
 
         $data = $req->fetchAll();
@@ -38,15 +40,15 @@ class DB extends PDO
         return $data;
     }
 
-    static public function update ( string $query, array $params = [] ) : int {
-        $bdd = new DB;
+     public function update ( string $query, array $params = [] ) : int {
+
 
         if ( $params ) {
-            $req = $bdd->prepare( $query );
+            $req = $this->db->prepare( $query );
             $req->execute( $params );
         }
         else {
-            $req = $bdd->query( $query );
+            $req = $this->db->query( $query );
         }
 
         $updated = $req->rowCount();
@@ -54,15 +56,15 @@ class DB extends PDO
         return $updated;
     }
 
-    static public function insert ( string $query, array $params = [] ) : int {
-        $bdd = new DB;
+     public function insert ( string $query, array $params = [] ) : int {
+
 
         if ( $params ) {
-            $req = $bdd->prepare( $query );
+            $req = $this->db->prepare( $query );
             $req->execute( $params );
         }
         else {
-            $req = $bdd->query( $query );
+            $req = $this->db->query( $query );
         }
 
         $inserted = $req->rowCount();
@@ -70,15 +72,15 @@ class DB extends PDO
         return $inserted;
     }
 
-    static public function delete ( string $query, array $params = [] ) : int {
-        $bdd = new DB;
+     public function delete ( string $query, array $params = [] ) : int {
+
 
         if ( $params ) {
-            $req = $bdd->prepare( $query );
+            $req = $this->db->prepare( $query );
             $req->execute( $params );
         }
         else {
-            $req = $bdd->query( $query );
+            $req = $this->db->query( $query );
         }
 
         $deleted = $req->rowCount();
