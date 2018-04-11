@@ -35,13 +35,10 @@
                     <input type="password" name="password" placeholder="  Mot de passe">
                 </form>
             </div>
-<<<<<<< HEAD
             <p><a href="http://localhost:8888/NWT/includes/passoubli/passoubli.php"> Mot de passe oublier ?</a></p>
             <button>Connection</button>
-=======
             <p>Mot de passe oublier ?</p>
             <button>Connexion</button>
->>>>>>> origin/front
         </div>
         <div class="signup hide">
             <h2>Inscription</h2>
