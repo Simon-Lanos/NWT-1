@@ -15,15 +15,53 @@
 }
 .profilPicture
 {
-    border-radius: 1000px;
-    border: 3px double white;
+    border-radius: 100000px;
+    border: 5px double white;
     width: 50%;
     height: auto;
     margin-top: 20%;
     opacity: 3;
 
 }
-.marginTopDix
+.marginLeft2
 {
-    margin-top: 10%;
+    margin-left: 2%;
+}
+
+.demiCercle{
+    height: 100px;
+    width: 50px;
+    background: rgba(74, 190, 157, 0.5);
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    position: fixed;
+    right: 33%;
+    top: 5%;
+    text-align: center;
+}
+.croix1
+{
+    content:"";
+    background: white;
+    width: 70%;
+    height: 7%;
+    z-index: 3;
+    border-radius: 15px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 49%;
+    left: 22%;
+}
+.croix2
+{
+    content:"";
+    background: white;
+    width: 70%;
+    height: 7%;
+    z-index: 3;
+    border-radius: 15px;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 42%;
+    left: 22%;
 }
