@@ -6,10 +6,10 @@
  * Time: 09:53
  */
 
-class PDO
+class DB extends PDO
 {
 
-    const DSN = 'mysql:host=localhost;dbname=tuto';
+    const DSN = 'mysql:host=localhost;dbname=NWT';
     const USER = 'root';
     const PASSWORD = '';
 
