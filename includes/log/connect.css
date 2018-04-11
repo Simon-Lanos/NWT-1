@@ -138,3 +138,7 @@ background-color: #4abe9d;
 .hide{
     display: none;
 }
+
+.positionSelect{
+    display: flex;
+}
