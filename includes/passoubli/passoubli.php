@@ -4,6 +4,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="passoubli.css">
 <div class="form-gap"></div>
 <div class="container">
     <div class="row">
@@ -24,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="M'envoyer l'email" type="submit">
+                                    <input name="recover-submit" class="btn btn-lg btn-warning btn-block" value="M'envoyer l'email" type="submit">
                                 </div>
 
                                 <input type="hidden" class="hide" name="token" id="token" value="">
