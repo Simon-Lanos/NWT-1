@@ -21,21 +21,26 @@
             <div class="textcontent">
                 <p class="title">Deja un compte ?</p>
                 <p>connecte toi !</p>
-                <button id="switch2">connection</button>
+                <button id="switch2">connexion</button>
             </div>
         </div>
     </div>
     <div class="frontbox">
         <div class="login">
-            <h2>Connection</h2>
+            <h2>Connexion</h2>
             <div class="inputbox">
                 <form>
                     <input type="text" name="email" placeholder="  EMAIL">
                     <input type="password" name="password" placeholder="  Mot de passe">
                 </form>
             </div>
+<<<<<<< HEAD
             <p><a href="http://localhost:8888/NWT/includes/passoubli/passoubli.php"> Mot de passe oublier ?</a></p>
             <button>Connection</button>
+=======
+            <p>Mot de passe oublier ?</p>
+            <button>Connexion</button>
+>>>>>>> origin/front
         </div>
         <div class="signup hide">
             <h2>Inscription</h2>
