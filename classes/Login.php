@@ -29,14 +29,15 @@ class Login extends DB {
     }
 
 
-    private function accountExists() : array {
-        $admin = DB::select( 'select id, password from Users where login = ?', [$_POST['mail']] );
 
-        if ( $admin && password_verify( $_POST['password'], $admin[0]['password'] ) ) {
+    public function accountExists($mail, $password)  {
+        $admin = DB::select( 'select id, password from users where mail = ?', $mail );
+
+        if ( $admin && password_verify( $password, $admin[0]['password'] ) ) {
             return $admin[0];
         }
         else {
-            return [];
+            return false;
         }
     }
 
