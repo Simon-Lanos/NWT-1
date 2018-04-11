@@ -30,7 +30,6 @@
                                 </div>
                                 <input type="hidden" class="hide" name="token" id="token" value="">
                             </form>
-
                         </div>
                     </div>
                 </div>
