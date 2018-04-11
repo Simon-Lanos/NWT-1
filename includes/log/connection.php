@@ -34,7 +34,7 @@
                     <input type="password" name="password" placeholder="  Mot de passe">
                 </form>
             </div>
-            <p>Mot de passe oublier ?</p>
+            <p><a href="http://localhost:8888/NWT/includes/passoubli/passoubli.php"> Mot de passe oublier ?</a></p>
             <button>Connection</button>
         </div>
         <div class="signup hide">
