@@ -6,31 +6,34 @@
  * Time: 09:53
  */
 
-class DB extends PDO
+class DB
 {
 
-    const DSN = 'mysql:host=localhost;dbname=NWT';
-    const USER = 'root';
-    const PASSWORD = '';
-
-    public function __construct() {
+    // DSN : Data Source Name
+    private $dsn = "mysql:dbname=nwt;host=localhost;charset=utf8";
+    private $user = "root";
+    private $password = "";
+    private $db;
+    function __construct()
+    {
         try {
-            parent::__construct( self::DSN, self::USER, self::PASSWORD );
+            $this -> db = new PDO($this -> dsn, $this -> user, $this -> password);
+            $this -> db -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+
         }
-        catch ( PDOException $e ) {
-            die( 'Erreur : ' . $e->getMessage() );
+        catch (PDOException $e) {
+            Log::logWrite($e -> getMessage());
         }
     }
 
-    static public function select ( string $query, array $params = [] ) : array {
-        $bdd = new DB;
+     public function select ($query, $params ) {
 
         if ( $params ) {
-            $req = $bdd->prepare( $query );
+            $req = $this->db->prepare( $query );
             $req->execute( $params );
         }
         else {
-            $req = $bdd->query( $query );
+            $req = $this->db->query( $query );
         }
 
         $data = $req->fetchAll();
@@ -38,51 +41,51 @@ class DB extends PDO
         return $data;
     }
 
-    static public function update ( string $query, array $params = [] ) : int {
-        $bdd = new DB;
-
-        if ( $params ) {
-            $req = $bdd->prepare( $query );
-            $req->execute( $params );
-        }
-        else {
-            $req = $bdd->query( $query );
-        }
-
-        $updated = $req->rowCount();
-
-        return $updated;
-    }
-
-    static public function insert ( string $query, array $params = [] ) : int {
-        $bdd = new DB;
-
-        if ( $params ) {
-            $req = $bdd->prepare( $query );
-            $req->execute( $params );
-        }
-        else {
-            $req = $bdd->query( $query );
-        }
-
-        $inserted = $req->rowCount();
-
-        return $inserted;
-    }
-
-    static public function delete ( string $query, array $params = [] ) : int {
-        $bdd = new DB;
-
-        if ( $params ) {
-            $req = $bdd->prepare( $query );
-            $req->execute( $params );
-        }
-        else {
-            $req = $bdd->query( $query );
-        }
-
-        $deleted = $req->rowCount();
-
-        return $deleted;
-    }
+//     public function update ( string $query, array $params = [] ) : int {
+//
+//
+//        if ( $params ) {
+//            $req = $this->db->prepare( $query );
+//            $req->execute( $params );
+//        }
+//        else {
+//            $req = $this->db->query( $query );
+//        }
+//
+//        $updated = $req->rowCount();
+//
+//        return $updated;
+//    }
+//
+//public function insert ( string $query, array $params = [] ) : int {
+//
+//
+//        if ( $params ) {
+//            $req = $this->db->prepare( $query );
+//            $req->execute( $params );
+//        }
+//        else {
+//            $req = $this->db->query( $query );
+//        }
+//
+//        $inserted = $req->rowCount();
+//
+//        return $inserted;
+//    }
+//
+//     public function delete ( string $query, array $params = [] ) : int {
+//
+//
+//        if ( $params ) {
+//            $req = $this->db->prepare( $query );
+//            $req->execute( $params );
+//        }
+//        else {
+//            $req = $this->db->query( $query );
+//        }
+//
+//        $deleted = $req->rowCount();
+//
+//        return $deleted;
+//    }
 }

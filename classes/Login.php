@@ -5,7 +5,7 @@ class Login extends DB {
 
     public function connexion() {
         if ( isset( $_SESSION['id'] ) ) {
-            header( 'Location: /admin' );
+            header( 'Location: ./index.php' );
         }
 
         if ( !empty( $_POST ) ) {
@@ -16,7 +16,7 @@ class Login extends DB {
             if ( $admin ) {
                 $_SESSION['id'] = $admin['id'];
 
-                header( 'Location: /admin' );
+                header( 'Location: ./index.php' );
             }
             else {
                 $erreur = 'Identifiants erronés';
@@ -29,14 +29,15 @@ class Login extends DB {
     }
 
 
-    private function accountExists() : array {
-        $admin = DB::select( 'select id, password from admin where login = ?', [$_POST['mail']] );
 
-        if ( $admin && password_verify( $_POST['password'], $admin[0]['password'] ) ) {
+    public function accountExists($mail, $password)  {
+        $admin = DB::select( 'select id, password from users where mail = ?', $mail );
+
+        if ( $admin && password_verify( $password, $admin[0]['password'] ) ) {
             return $admin[0];
         }
         else {
-            return [];
+            return false;
         }
     }
 
