@@ -13,3 +13,40 @@ a.noUnderLine:link
 {
     text-decoration:none;
 }
+.buttonBleu
+{
+    width: 10%;
+    height: 5%;
+    background-color: #4abe9d;
+    text-align: center;
+    padding: 1%;
+    border-radius: 4px;
+    border: 1px solid #4abe9d;
+    color: white;
+}
+.buttonNoir
+{
+    width: 10%;
+    height: 5%;
+    background-color: #343e47;
+    text-align: center;
+    padding: 1%;
+    border-radius: 4px;
+    border: 1px solid #343e47;
+    color: white;
+}
+.buttonJaune
+{
+    width: 10%;
+    height: 5%;
+    background-color: #ffed00;
+    text-align: center;
+    padding: 1%;
+    border-radius: 4px;
+    border: 1px solid #ffed00;
+    color: white;
+}
+a.noUnderLine:link
+{
+    text-decoration:none;
+}
