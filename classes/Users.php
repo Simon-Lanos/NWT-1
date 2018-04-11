@@ -6,7 +6,7 @@
  * Time: 15:05
  */
 
-class Users
+class Users extends  PDO
 {
 
 }
