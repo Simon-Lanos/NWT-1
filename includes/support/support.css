@@ -1,19 +1,11 @@
-*{
-    text-align: center;
+body {
+    background-color: #4abe9d;
 }
-
-.category {
-    width: 20%;
+#mainwrapper{
+    display: flex;
+    flex-direction: column;
 }
-
-.objet {
-    width: 20%;
-}
-
-.mail {
-    width: 20%;
-}
-
-.buttonSend {
-    margin-top: 20px;
+#content{
+    display: flex;
+    flex-direction: column;
 }
