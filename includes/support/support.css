@@ -1,0 +1,19 @@
+*{
+    text-align: center;
+}
+
+.category {
+    width: 20%;
+}
+
+.objet {
+    width: 20%;
+}
+
+.mail {
+    width: 20%;
+}
+
+.buttonSend {
+    margin-top: 20px;
+}
