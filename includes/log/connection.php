@@ -36,8 +36,6 @@
                 </form>
             </div>
             <p><a href="http://localhost:8888/NWT/includes/passoubli/passoubli.php"> Mot de passe oublier ?</a></p>
-            <button>Connection</button>
-            <p>Mot de passe oublier ?</p>
             <button>Connexion</button>
         </div>
         <div class="signup hide">
