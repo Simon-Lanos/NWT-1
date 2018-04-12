@@ -26,66 +26,9 @@ class DB
         }
     }
 
-     public function select ($query, $params ) {
 
-        if ( $params ) {
-            $req = $this->db->prepare( $query );
-            $req->execute( $params );
-        }
-        else {
-            $req = $this->db->query( $query );
-        }
-
-        $data = $req->fetchAll();
-
-        return $data;
+    function select($sql) {
+        return $this -> db -> query($sql) ->fetch();
     }
 
-//     public function update ( string $query, array $params = [] ) : int {
-//
-//
-//        if ( $params ) {
-//            $req = $this->db->prepare( $query );
-//            $req->execute( $params );
-//        }
-//        else {
-//            $req = $this->db->query( $query );
-//        }
-//
-//        $updated = $req->rowCount();
-//
-//        return $updated;
-//    }
-//
-//public function insert ( string $query, array $params = [] ) : int {
-//
-//
-//        if ( $params ) {
-//            $req = $this->db->prepare( $query );
-//            $req->execute( $params );
-//        }
-//        else {
-//            $req = $this->db->query( $query );
-//        }
-//
-//        $inserted = $req->rowCount();
-//
-//        return $inserted;
-//    }
-//
-//     public function delete ( string $query, array $params = [] ) : int {
-//
-//
-//        if ( $params ) {
-//            $req = $this->db->prepare( $query );
-//            $req->execute( $params );
-//        }
-//        else {
-//            $req = $this->db->query( $query );
-//        }
-//
-//        $deleted = $req->rowCount();
-//
-//        return $deleted;
-//    }
 }

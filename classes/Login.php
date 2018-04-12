@@ -21,24 +21,25 @@ class Login extends DB {
             else {
                 $erreur = 'Identifiants erronés';
             }
-
-            $this->view( 'admin/connexion', ['erreur' => $erreur] );
         }
 
-        $this->view( 'admin/connexion' );
     }
 
 
 
-    public function accountExists($mail, $password)  {
-        $admin = DB::select( 'select id, password from users where mail = ?', $mail );
+    public function accountExists($mail,$password)  {
 
-        if ( $admin && password_verify( $password, $admin[0]['password'] ) ) {
-            return $admin[0];
+        $sql = "SELECT id, password FROM users WHERE mail = '" . $mail . "'" ;
+        $req = DB::select($sql);
+        var_dump($req);
+
+        if (password_verify($req->password, $password)) {
+            return true;
+        } else {
+           return false;
         }
-        else {
-            return false;
-        }
+
+
     }
 
 

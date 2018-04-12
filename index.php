@@ -7,12 +7,16 @@
 
     $login = new Login();
 
-    if($login->accountExists($mail, $pwd)){
-        echo 'Vrooooommm';
-    }
-    else{
-        echo "Pas Vroooommm ";
-    }
+
+//    if($login->accountExists($mail, $pwd)){
+//        echo 'Vrooooommm';
+//    }
+//    else{
+//        echo "Pas Vroooommm ";
+//    }
+
+
+
 
 ?>
 <!doctype html>
@@ -35,6 +39,8 @@
     <label for="Mdp" >Password</label>
     <input type="password" id="Mdp" name="password" placeholder="Mot de passe">
     <input type="submit" value="Envoyer le formulaire tu est baisée ">
+
+
 </form>
 
 </body>
