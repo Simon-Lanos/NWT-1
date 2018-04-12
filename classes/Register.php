@@ -11,7 +11,7 @@ class Register extends DB {
         if ( !empty( $_POST ) ) {
             extract( $_POST );
 
-            $admin = $this->accountCreated();
+            $admin = $this->createAccount();
 
             if ( $admin ) {
                 $_SESSION['id'] = $admin['id'];
@@ -21,18 +21,16 @@ class Register extends DB {
             else {
                 $erreur = 'Identifiants erronés';
             }
-
-            $this->view( 'admin/connexion', ['erreur' => $erreur] );
         }
-
-        $this->view( 'admin/connexion' );
     }
 
 
-    private function accountCreated() {
-        $this->db->exec('INSERT INTO users(userFirstName, userLastName, userPassword, userMail, userGender, userBirthdate, userAdress, zipCode
-                          , userCity, userSpeciality, promotionId, groupId, roleId) VALUES ($FIRSTNAME, $LASTNAME, $PASSWORD, $MAIL 
-                          , $GENDER, $BIRTHDATE, $ADRESS, $ZIPCODE, $CITY, $SPECIALITY, $PROMOTION, $GROUP, $ROLE)');
-        $this->db->exec('select userFirstName, userLastName, userMail from users');
+    public function createAccount() {
+        $db = 'INSERT INTO users(userFirstName, userLastName, userPassword, userMail, userGender, userBirthdate, userAdress, zipCode
+                          , userCity, userSpeciality, promotionId, groupId, roleId VALUES $FIRSTNAME, $LASTNAME, $PASSWORD, $MAIL 
+                          , $GENDER, $BIRTHDATE, $ADRESS, $ZIPCODE, $CITY, $SPECIALITY, $PROMOTION, $GROUP, $ROLE)';
+        $sql = "SELECT userFirstName, userLastName, userPassword, userMail, userGender, userBirthdate, userAdress, zipCode
+                          , userCity, userSpeciality, promotionId, groupId, roleId FROM users WHERE mail = '" . $mail . "'" ;
+        $req = DB::select($sql);
     }
 }
