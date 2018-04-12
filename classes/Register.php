@@ -29,8 +29,7 @@ class Register extends DB {
         $db = 'INSERT INTO users(userFirstName, userLastName, userPassword, userMail, userGender, userBirthdate, userAdress, zipCode
                           , userCity, userSpeciality, promotionId, groupId, roleId VALUES $FIRSTNAME, $LASTNAME, $PASSWORD, $MAIL 
                           , $GENDER, $BIRTHDATE, $ADRESS, $ZIPCODE, $CITY, $SPECIALITY, $PROMOTION, $GROUP, $ROLE)';
-        $sql = "SELECT userFirstName, userLastName, userPassword, userMail, userGender, userBirthdate, userAdress, zipCode
-                          , userCity, userSpeciality, promotionId, groupId, roleId FROM users WHERE mail = '" . $mail . "'" ;
+        $sql = "SELECT mail FROM users WHERE mail = '" . $mail . "'" ;
         $req = DB::select($sql);
     }
 }
