@@ -7,6 +7,7 @@
 
     $login = new Login();
 
+
     if($login->accountExists($mail, $pwd)){
         echo 'Vrooooommm';
     }
@@ -24,19 +25,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+    <body>
+
+        <form action="index.php" method="post">
+            <label for="User" >Mail</label>
+            <input type="text" id="User" name="mail" placeholder="User">
+            <label for="Mdp" >Password</label>
+            <input type="password" id="Mdp" name="password" placeholder="Mot de passe">
+            <input type="submit" value="Envoyer le formulaire tu est baisée ">
 
 
+        </form>
 
-
-<form action="index.php" method="post">
-    <label for="User" >Mail</label>
-    <input type="text" id="User" name="mail" placeholder="User">
-    <label for="Mdp" >Password</label>
-    <input type="password" id="Mdp" name="password" placeholder="Mot de passe">
-    <input type="submit" value="Envoyer le formulaire tu est baisée ">
-</form>
-
-</body>
+    </body>
 </html>
 
