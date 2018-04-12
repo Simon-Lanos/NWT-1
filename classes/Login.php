@@ -25,23 +25,23 @@ class Login extends DB {
 
     }
 
-
-
     public function accountExists($mail,$password)  {
 
         $sql = "SELECT id, password FROM users WHERE mail = '" . $mail . "'" ;
         $req = DB::select($sql);
-        var_dump($req);
-
-        if (password_verify($req->password, $password)) {
+        // On récupère le password en base
+        $passwordDb = $req->password;
+        // On hash le password du formulaire
+        $passwordPost = md5($password);
+        // On vérifie que les deux password sont identique
+        if ($passwordDb === $passwordPost) {
             return true;
+
         } else {
            return false;
+
         }
 
-
     }
-
-
 
 }
