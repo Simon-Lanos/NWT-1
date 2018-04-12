@@ -12,24 +12,19 @@ class Register extends DB {
             extract( $_POST );
 
             $admin = $this->createAccount();
-
-            if ( $admin ) {
-                $_SESSION['id'] = $admin['id'];
-
-                header( 'Location: /admin' );
-            }
-            else {
-                $erreur = 'Identifiants erronés';
-            }
         }
     }
 
-
     public function createAccount() {
-        $db = 'INSERT INTO users(userFirstName, userLastName, userPassword, userMail, userGender, userBirthdate, userAdress, zipCode
+        $sql = "SELECT userMail FROM users WHERE userMail = '" . $mail . "'" ;
+        $req = DB::select($sql);
+        $mailDb = $req->userMail;
+        if ($mailDb === $mail) {
+        echo "Ce mail est déjà utilisé";
+    } else {
+            $db = 'INSERT INTO users(userFirstName, userLastName, userPassword, userMail, userGender, userBirthdate, userAdress, zipCode
                           , userCity, userSpeciality, promotionId, groupId, roleId VALUES $FIRSTNAME, $LASTNAME, $PASSWORD, $MAIL 
                           , $GENDER, $BIRTHDATE, $ADRESS, $ZIPCODE, $CITY, $SPECIALITY, $PROMOTION, $GROUP, $ROLE)';
-        $sql = "SELECT mail FROM users WHERE mail = '" . $mail . "'" ;
-        $req = DB::select($sql);
+        }
     }
 }
