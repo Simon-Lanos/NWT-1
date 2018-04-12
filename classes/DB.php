@@ -10,7 +10,7 @@ class DB
 {
 
     // DSN : Data Source Name
-    private $dsn = "mysql:dbname=nwt;host=localhost;charset=utf8";
+    private $dsn = "mysql:dbname=NWTdb;host=localhost;charset=utf8";
     private $user = "root";
     private $password = "";
     private $db;
