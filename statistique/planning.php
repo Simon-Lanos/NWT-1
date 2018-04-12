@@ -7,12 +7,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Dashboard
-            <small>Control panel</small>
+            Planning
+            <small>Contrôle de l'utilisation des salles</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Statistique</a></li>
-            <li class="active">Dashboard</li>
+            <li class="active">Planning</li>
         </ol>
     </section>
 
