@@ -25,7 +25,7 @@
         </div>
 
     <!-- Légendes -->
-        <div class="row" style="margin-top: 150px">
+        <div class="row" style="margin-top: 100px">
             <div class="col-md-3">
                 <!-- small box -->
                 <div class="small-box bg-green">
@@ -38,7 +38,7 @@
                 <div class="col-md-3">
                     <div class="small-box bg-orange">
                         <div class="inner">
-                            <p>3 salles sur 4 sont occupées</p>
+                            <p>2 salles sur 3 sont occupées</p>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     <div class="col-md-3">
                         <div class="small-box bg-red">
                             <div class="inner">
-                                <p>2 salles sur 3 sont occupées</p>
+                                <p>1 salle sur 3 est occupée</p>
                             </div>
                         </div>
                 </div>
