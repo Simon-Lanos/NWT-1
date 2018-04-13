@@ -20,7 +20,7 @@
         </div>
         <div class="signupMsg visibility">
             <div class="textcontent">
-                <p class="title">Deja un compte ?</p>
+                <p class="title">Déjà un compte ?</p>
                 <p>connecte toi !</p>
                 <button id="switch2">connexion</button>
             </div>
@@ -35,7 +35,7 @@
                     <input type="password" name="password" placeholder="  Mot de passe">
                 </form>
             </div>
-            <p><a href="http://localhost:8888/NWT/includes/passoubli/passoubli.php"> Mot de passe oublier ?</a></p>
+            <p><a href="http://localhost:8888/NWT/includes/passoubli/passoubli.php"> Mot de passe oublié ?</a></p>
             <button>Connexion</button>
         </div>
         <div class="signup hide">
@@ -44,9 +44,18 @@
                 <form value="">
                     <input type="text" name="name" placeholder="Nom">
                     <input type="text" name="firstname" placeholder="Prénom">
-
+                    <div class="sexe">
+                        <label>Femme</label>
+                        <input type="radio" class="radio" name="sexe" value="female">
+                        <label>Homme</label>
+                        <input type="radio" class="radio" name="sexe" value="male">
+                    </div>
+                    <label>Date de Naissance</label>
+                    <input type="date" name="birthdate">
                     <input type="text" name="email" placeholder="  EMAIL">
+                    <input type="text" name="adresse" placeholder="Votre adresse">
                     <input type="password" name="password" placeholder="  Mot de passe">
+                    <input name="monAvatar" type="file">
                     <div class="positionSelect">
                         <select name ="specialite" id="specialite">
                             <option value="develop" selected>Dévelopement</option>
@@ -54,6 +63,10 @@
                             <option value="webdesign">Web-design</option>
                             <option value="intervenant">Intervenant</option>
                         </select>
+                    </div>
+                    <div class="condition">
+                        <p>J'accepte les <a href="">conditions d'utilisation</a></p>
+                        <input type="checkbox">
                     </div>
                 </form>
             </div>
