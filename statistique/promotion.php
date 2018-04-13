@@ -236,5 +236,3 @@
         barChart.Bar(barChartData, barChartOptions)
     })
 </script>
-</body>
-</html>
