@@ -65,7 +65,7 @@ ENGINE = InnoDB;
 -- Table `Zones`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Zones` (
-  `zoneId` INT UNSIGNED NOT NULL,
+  `zoneId` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `zoneName` VARCHAR(255) NOT NULL,
   `zoneWifiCode` VARCHAR(255) NULL,
   `zoneCapacity` INT NULL,
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `Tickets` (
   `ticketSubject` VARCHAR(255) NULL,
   `ticketText` MEDIUMTEXT NULL,
   `ticketDate` DATETIME NULL,
-  `tucketCloseDate` DATETIME NULL,
+  `ticketCloseDate` DATETIME NULL,
   PRIMARY KEY (`ticketId`),
   INDEX `fk_Tickets_Users1_idx` (`userId` ASC),
   CONSTRAINT `fk_Tickets_Users1`
