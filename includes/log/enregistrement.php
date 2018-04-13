@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="connect.css">
+    <link rel="stylesheet" href="./includes/log/connect.css">
 </head>
 <body>
 
@@ -41,6 +41,6 @@ session_start();
     </div>
 </div>
 
-<script  src="connect.js"></script>
+<script  src="./includes/log/connect.js"></script>
 </body>
 </html>
