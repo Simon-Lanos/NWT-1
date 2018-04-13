@@ -32,12 +32,11 @@
 
         <div class="col-md-6">
             <div class="btn-group">
-
                 <button
                     class="btn btn-primary"
                     mwl-date-modifier
                     date="vm.viewDate"
-                    decrement="vm.calendarView"
+                    set-to-today
                     ng-click="vm.cellIsOpen = false">
                     Salle 1
                 </button>
@@ -53,13 +52,12 @@
                     class="btn btn-primary"
                     mwl-date-modifier
                     date="vm.viewDate"
-                    increment="vm.calendarView"
+                    set-to-today
                     ng-click="vm.cellIsOpen = false">
                     Salle 3
                 </button>
             </div>
         </div>
-
         <div class="col-md-6 text-center">
             <div class="btn-group">
 
