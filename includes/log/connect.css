@@ -26,7 +26,7 @@ background-color: #4abe9d;
 .frontbox{
     background-color: white;
     border-radius: 20px;
-    height: 110%;
+    height: auto;
     width: 50%;
     z-index: 10;
     position: absolute;
@@ -124,6 +124,7 @@ background-color: #4abe9d;
     cursor: pointer;
     color:#404040;
     font-size:15px;
+    width: 60%;
 }
 
 .loginMsg, .signupMsg{
@@ -140,5 +141,42 @@ background-color: #4abe9d;
 }
 
 .positionSelect{
+    text-align: left;
+}
+
+label{
     display: flex;
+    font-size: 14px;
+}
+
+.sexe input, .sexe label{
+    height: 20px;
+    width: 20%;
+}
+
+.sexe{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sexe label{
+    margin-top: 5px;
+}
+
+.condition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.condition input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20%;
+    margin-top: 20px;
 }
