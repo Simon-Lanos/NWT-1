@@ -17,15 +17,53 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" style="margin-top: 30px">
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <!-- ./col -->
+            <div id="calendar"></div>
+        </div>
+
+    <!-- Légendes -->
+        <div class="row" style="margin-top: 150px">
+            <div class="col-md-3">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <p>Toutes les salles sont occupées</p>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-md-3">
+                    <div class="small-box bg-orange">
+                        <div class="inner">
+                            <p>3 salles sur 4 sont occupées</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-md-3">
+                        <div class="small-box bg-red">
+                            <div class="inner">
+                                <p>2 salles sur 3 sont occupées</p>
+                            </div>
+                        </div>
+                </div>
+
+                    <div class="col-md-3">
+                        <div class="small-box bg-gray">
+                            <div class="inner">
+                                <p>Aucune salle n'est occupée</p>
+                            </div>
+                        </div>
+                    </div>
 
         </div>
-        <div id="calendar"></div>
-        <!-- /.row -->
 
+    <!-- /.Légendes -->
+
+        <!-- /.row -->
     </section>
     <!-- /.content -->
 </div>
@@ -213,7 +251,7 @@
             _initializeDatasourceColors: function() {
                 for(var i in this.options.dataSource) {
                     if(this.options.dataSource[i].color == null) {
-                        this.options.dataSource[i].color = colors[i % colors.length];
+                        this.options.dataSource[i].color = colors[i % colors.length]; //couleurs des jours//
                     }
                 }
             },
