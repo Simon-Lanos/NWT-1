@@ -30,6 +30,36 @@
 
     <div class="row">
 
+        <div class="col-md-6">
+            <div class="btn-group">
+
+                <button
+                    class="btn btn-primary"
+                    mwl-date-modifier
+                    date="vm.viewDate"
+                    decrement="vm.calendarView"
+                    ng-click="vm.cellIsOpen = false">
+                    Salle 1
+                </button>
+                <button
+                    class="btn btn-default"
+                    mwl-date-modifier
+                    date="vm.viewDate"
+                    set-to-today
+                    ng-click="vm.cellIsOpen = false">
+                    Salle 2
+                </button>
+                <button
+                    class="btn btn-primary"
+                    mwl-date-modifier
+                    date="vm.viewDate"
+                    increment="vm.calendarView"
+                    ng-click="vm.cellIsOpen = false">
+                    Salle 3
+                </button>
+            </div>
+        </div>
+
         <div class="col-md-6 text-center">
             <div class="btn-group">
 
