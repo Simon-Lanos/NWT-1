@@ -65,7 +65,7 @@ ENGINE = InnoDB;
 -- Table `Zones`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Zones` (
-  `zoneId` INT UNSIGNED NOT NULL,
+  `zoneId` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `zoneName` VARCHAR(255) NOT NULL,
   `zoneWifiCode` VARCHAR(255) NULL,
   `zoneCapacity` INT NULL,
