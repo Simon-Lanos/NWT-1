@@ -1,4 +1,4 @@
-<?php include('header.html'); ?>
+<?php include('header.php'); ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -16,42 +16,42 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
                 <!-- BAR CHART -->
-            <div class="box box-success">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Nombre de personnes qui utilisent le micro-onde</h3>
-                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Nombre de personnes qui utilisent le micro-onde</h3>
+                    </div>
                     <div class="box-body">
                         <div class="chart">
                             <canvas id="utilisation" style="height:230px"></canvas>
                         </div>
                     </div>
 
+                </div>
             </div>
-            </div>
-            </div>
+        </div>
 
         <div class="row" style="margin-top: 80px">
             <div class="col-md-2"></div>
             <div class="col-md-12">
                 <!-- BAR CHART -->
 
-                    <!-- LINE CHART -->
-                    <div class="box box-info" style="color: #397ca3">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Nombre d'utilisateurs Homme et Femme</h3>
+                <!-- LINE CHART -->
+                <div class="box box-info" style="color: #397ca3">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Nombre d'utilisateurs Homme et Femme</h3>
 
-                        </div>
-                        <div class="box-body">
-                            <div class="chart">
-                                <canvas id="lineChart" style="height:250px"></canvas>
-                            </div>
-                        </div>
-                        <!-- /.box-body -->
                     </div>
-                    <!-- /.box -->
+                    <div class="box-body">
+                        <div class="chart">
+                            <canvas id="lineChart" style="height:250px"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
                 <!-- /.box -->
 
             </div>
@@ -69,8 +69,6 @@
 <!-- FastClick -->
 <script>
     $(function () {
-
-
         //-------------
         //- PIE CHART -
         //-------------
@@ -108,7 +106,6 @@
                 highlight: '#00c0ef',
                 label    : 'Personnes qui ne l\'utilisent pas'
             },
-
         ]
         var pieOptions     = {
             //Boolean - Whether we should show a stroke on each segment
@@ -137,23 +134,17 @@
         //Create pie or douhnut chart
         // You can switch between pie and douhnut using the method below.
         pieChart.Doughnut(PieData, pieOptions)
-
     })
-
     //-------------
     //- FIN PIE CHART -
     //-------------
-
-
     //-------------
     //- Line CHART -
     //-------------
-
     // Get context with jQuery - using jQuery's .get() method.
     var areaChartCanvas = $('#lineChart').get(0).getContext('2d')
     // This will get the first returned node in the jQuery collection.
     var areaChart       = new Chart(areaChartCanvas)
-
     var areaChartData = {
         labels  : ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
         datasets: [
@@ -179,7 +170,6 @@
             }
         ]
     }
-
     var areaChartOptions = {
         //Boolean - If we should show the scale at all
         showScale               : true,
@@ -218,10 +208,8 @@
         //Boolean - whether to make the chart responsive to window resizing
         responsive              : true
     }
-
     //Create the line chart
     areaChart.Line(areaChartData, areaChartOptions)
-
     //-------------
     //- LINE CHART -
     //--------------
@@ -230,5 +218,4 @@
     var lineChartOptions         = areaChartOptions
     lineChartOptions.datasetFill = false
     lineChart.Line(areaChartData, lineChartOptions)
-
 </script>

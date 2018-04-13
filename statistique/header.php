@@ -1,3 +1,4 @@
+<?php include "../classes/DB.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
