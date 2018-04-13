@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `Tickets` (
   `ticketSubject` VARCHAR(255) NULL,
   `ticketText` MEDIUMTEXT NULL,
   `ticketDate` DATETIME NULL,
-  `tucketCloseDate` DATETIME NULL,
+  `ticketCloseDate` DATETIME NULL,
   PRIMARY KEY (`ticketId`),
   INDEX `fk_Tickets_Users1_idx` (`userId` ASC),
   CONSTRAINT `fk_Tickets_Users1`
