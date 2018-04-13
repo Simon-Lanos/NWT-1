@@ -4,6 +4,22 @@ $firstName = 'connard';
 $lastName = 'de merde';
 $token = hash("sha256", crypt(microtime(), "NWTroll"));
 echo $token;
+$tokenTime = date_format(date_create(),'Y-m-d H:i:s');
+echo $tokenTime;
+
+//$sql = 'UPDATE users SET userToken = ":token" WHERE userId = :userId
+//    ';
+
+$sql = 'SELECT userToken FROM nwtdb.users WHERE userId = "1"';
+$db = new DB();
+$stmt = $db->select($sql);
+
+if (!isset($_GET['token'])) {
+    return;
+}
+//else {
+//    if ()
+//}
 
 $to = 'test@yolo.fr';
 $subject = 'yolo test';
@@ -15,11 +31,12 @@ $message = '
     <body>
     <p>Bonjour</p>' . $firstName . ' ' . strtoupper($lastName) . '
     <p>Pour confirmer votre insciption veuiller cliquer sur le boutton si dessous</p>
-    <a href="localhost/coursphp/index.php/?page=home&token= ' . $token . ' ">yolo !</a>
+    <a href="localhost/nwt/?token=' . $token . '">
+        <img src="https://image.noelshack.com/fichiers/2018/15/5/1523612366-buttonvalidation.png" />
+    </a>
     </body>
     </html>
 ';
 $mail = new Mail($to, $subject, $message);
-var_dump($mail->sendMail());
-var_dump($mail);
-die('yollo');
+$mail->sendMail();
+
