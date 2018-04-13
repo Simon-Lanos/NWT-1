@@ -1,4 +1,5 @@
-<?php include "../classes/DB.php"; ?>
+<?php include "../classes/DB.php";
+      $db = new DB(); ?>
 <!DOCTYPE html>
 <html>
 <head>

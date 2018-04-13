@@ -2,8 +2,6 @@
 
 /* REQUETTE */
 
-$db = new DB();
-
 //nb Eleve global
 $eleveTotal = $db->select("SELECT * FROM users JOIN roles ON users.roleId = roles.roleId WHERE roleName='eleve'");
 //nb Eleve en cours
@@ -24,7 +22,7 @@ $nbMobileFixe = $db->select("SELECT * FROM furnitures");
 $nbMobilierMobile = $db->select("SELECT * FROM equipments");
 
 
-//valeur fake
+//Valeur d'initialisation en attendant les fausses données de test
 $eleveTotal = 180;
 $eleveActif = 60;
 $nbUser = 220;

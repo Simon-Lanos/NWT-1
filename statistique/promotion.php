@@ -68,6 +68,25 @@
 <!-- FastClick -->
 <script>
     $(function () {
+
+        /* ESSAIE JSON / S AFFICHE DANS LA CONSOLE*/
+        function monCode()
+        {
+            if (req.readyState == 4)
+            {
+                var doc = eval('(' + req.responseText + ')');
+                console.log(req.responseText);
+                //console.log(doc.etudiant[1].groupe);
+
+                //MAINTENANT AVEC DE VRAI DONNEE PARCOURIR LE FICHIER JSON AVEC UNE BOUCLE
+            }
+        }
+
+        var req = new XMLHttpRequest();
+        req.open("GET", "promotion.json", true);
+        req.onreadystatechange = monCode;   // la fonction de prise en charge
+        req.send(null);
+
         /* ChartJS
          * -------
          * Here we will create a few charts using ChartJS
