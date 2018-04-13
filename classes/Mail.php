@@ -4,24 +4,21 @@ class Mail
 {
     private $to;
     private $subject;
-    private $template;
-    private $data;
+    private $content;
     private $header;
 
     /**
      * Mail constructor.
      * @param $to
      * @param $subject
-     * @param $template
-     * @param $data
+     * @param $content
      * @param $header
      */
-    public function __construct($to, $subject, $template, $data , $header = null)
+    public function __construct($to, $subject, $content, $header = null)
     {
         $this->to = $to;
         $this->subject = $subject;
-        $this->template = $template;
-        $this->data = $data;
+        $this->content = $content;
 
         if ($header === null) {
             $this->header = 'From: webmaster@example.com' . "\r\n" .
@@ -34,13 +31,21 @@ class Mail
         }
     }
 
-
     public function sendMail() {
+
+        try {
         mail($this->to,
             $this->subject,
-            $this->template,
+            $this->content,
             $this->header
             );
-    }
+        $return = true;
+        }
+        catch (Exception $exception) {
+            echo $exception->getMessage();
+            $return = false;
+        }
 
+        return $return;
+    }
 }
