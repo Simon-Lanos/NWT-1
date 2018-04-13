@@ -22,13 +22,8 @@
                 <!-- BAR CHART -->
                 <div class="box box-success">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Toilettes</h3>
+                        <h3 class="box-title">Temps d'attente aux toilettes Hommes et Femmes</h3>
 
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
                     </div>
                     <div class="box-body">
                         <div class="chart">
@@ -64,24 +59,24 @@
     var areaChart       = new Chart(areaChartCanvas)
 
     var areaChartData = {
-        labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels  : ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
         datasets: [
             {
-                label               : 'Electronics',
-                fillColor           : 'rgba(210, 214, 222, 1)',
-                strokeColor         : 'rgba(210, 214, 222, 1)',
-                pointColor          : 'rgba(210, 214, 222, 1)',
-                pointStrokeColor    : '#c1c7d1',
+                label               : 'Homme',
+                fillColor           : '#397ca3',
+                strokeColor         : '#397ca3',
+                pointColor          : '#397ca3',
+                pointStrokeColor    : '#397ca3',
                 pointHighlightFill  : '#fff',
                 pointHighlightStroke: 'rgba(220,220,220,1)',
                 data                : [65, 59, 80, 81, 56, 55, 40]
             },
             {
-                label               : 'Digital Goods',
-                fillColor           : 'rgba(60,141,188,0.9)',
-                strokeColor         : 'rgba(60,141,188,0.8)',
-                pointColor          : '#3b8bba',
-                pointStrokeColor    : 'rgba(60,141,188,1)',
+                label               : 'Femme',
+                fillColor           : '#d175c7',
+                strokeColor         : '#d175c7',
+                pointColor          : '#d175c7',
+                pointStrokeColor    : '#d175c7',
                 pointHighlightFill  : '#fff',
                 pointHighlightStroke: 'rgba(60,141,188,1)',
                 data                : [28, 48, 40, 19, 86, 27, 90]

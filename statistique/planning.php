@@ -1106,17 +1106,17 @@
 
         var dates = $.fn.calendar.dates = {
             en: {
-                days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-                daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
-                months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                days: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+                daysShort: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+                daysMin: ["Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
+                months: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"],
+                monthsShort: ["Jan", "Fev", "Mar", "Avr", "Mai", "Jui", "Jui", "Aou", "Sep", "Oct", "Nov", "Dec"],
                 weekShort: 'W',
                 weekStart:0
             }
         };
 
-        var colors = $.fn.calendar.colors = ['#2C8FC9', '#9CB703', '#F5BB00', '#FF4A32', '#B56CE2', '#45A597'];
+        var colors = $.fn.calendar.colors = ['#00a65a', '#ff851b', '#dd4b39', '#d2d6de'];
 
         $(function(){
             $('[data-provide="calendar"]').each(function() {
