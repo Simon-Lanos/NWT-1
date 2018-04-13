@@ -14,9 +14,9 @@ $sql = 'SELECT userToken FROM nwtdb.users WHERE userId = "1"';
 $db = new DB();
 $stmt = $db->select($sql);
 
-if (!isset($_GET['token'])) {
-    return;
-}
+//if (!isset($_GET['token'])) {
+//    return;
+//}
 //else {
 //    if ()
 //}
