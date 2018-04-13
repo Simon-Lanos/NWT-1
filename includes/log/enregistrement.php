@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
     <!--salut-->
@@ -11,6 +14,7 @@
 <body>
 
 <div class="container">
+
     <div class="backbox">
         <div class="loginMsg">
             <div class="textcontent">
@@ -28,6 +32,9 @@
         </div>
     </div>
     <div class="frontbox">
+        <?php if(!empty($message)) : ?>
+            <p><?php echo $message; ?></p>
+        <?php endif; ?>
 <?php include 'connection.php'?>
 <?php include 'inscription.php'?>
 
