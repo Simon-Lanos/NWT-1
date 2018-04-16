@@ -10,13 +10,13 @@ spl_autoload_register('AutoLoad');
     <title>NWT</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body>
-<div id="container">
-    <?php
-    include "./includes/header.php";
-    CallPage::display();
-    include "./includes/footer.php";
-    ?>
-</div>
-</body>
+    <body>
+        <div id="container">
+            <?php
+            include "./includes/header.php";
+            CallPage::display();
+            include "./includes/footer.php";
+            ?>
+        </div>
+    </body>
 </html>
