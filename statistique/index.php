@@ -1,4 +1,38 @@
-<?php include('header.html'); ?>
+<?php include('header.php');
+
+/* REQUETTE */
+
+//nb Eleve global
+$eleveTotal = $db->select("SELECT * FROM users JOIN roles ON users.roleId = roles.roleId WHERE roleName='eleve'");
+//nb Eleve en cours
+$eleveActif = $db->select("SELECT * FROM users JOIN usergroups ON users.userId = usergroups.Users_userId
+                                      JOIN groups ON usergroups.Groups_groupId = groups.groupId
+                                      JOIN promotions ON groups.idPromotion = promotions.idPromotion WHERE promotionIsActive=true");
+//nb user
+$nbUser = $db->select("SELECT * FROM users");
+//nb ticket
+$nbTicket = $db->select("SELECT * FROM tickets");
+//nb reservation
+$nbReservation = $db->select("SELECT * FROM zonesreservations");
+//nb intervenant
+$nbIntervenant = $db->select("SELECT * FROM users JOIN roles ON users.roleId = roles.roleId WHERE roleName='intervenant'");
+//mobilier fixe
+$nbMobileFixe = $db->select("SELECT * FROM furnitures");
+//mobilier mobile
+$nbMobilierMobile = $db->select("SELECT * FROM equipments");
+
+
+//Valeur d'initialisation en attendant les fausses données de test
+$eleveTotal = 180;
+$eleveActif = 60;
+$nbUser = 220;
+$nbTicket = 5;
+$nbReservation = 580;
+$nbIntervenant = 30;
+$nbMobileFixe = 100;
+$nbMobilierMobile = 20;
+
+?>
 
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -22,7 +56,7 @@
           <!-- small box -->
           <div class="small-box bg-gray">
             <div class="inner">
-              <h3>60</h3>
+              <h3><?php echo $eleveTotal; ?></h3>
 
               <p>Elèves au total</p>
             </div>
@@ -36,7 +70,7 @@
           <!-- small box -->
           <div class="small-box bg-primary">
             <div class="inner">
-              <h3>60</h3>
+              <h3><?php echo $eleveActif; ?></h3>
 
               <p>Elève présent à la NWS</p>
             </div>
@@ -50,7 +84,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3><?php echo $nbUser; ?></h3>
 
               <p>Utilisateurs enregistrés</p>
             </div>
@@ -64,7 +98,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3><?php echo $nbTicket; ?></h3>
 
               <p>Tickets</p>
             </div>
@@ -79,7 +113,7 @@
           <!-- small box -->
           <div class="small-box bg-green-active">
             <div class="inner">
-              <h3>150</h3>
+              <h3><?php echo $nbReservation; ?></h3>
 
               <p>Reservations</p>
             </div>
@@ -93,7 +127,7 @@
           <!-- small box -->
           <div class="small-box bg-teal-active">
             <div class="inner">
-              <h3>53</h3>
+              <h3><?php echo $nbIntervenant; ?></h3>
 
               <p>Intervenants</p>
             </div>
@@ -107,7 +141,7 @@
           <!-- small box -->
           <div class="small-box bg-purple">
             <div class="inner">
-              <h3>44</h3>
+              <h3><?php echo $nbMobileFixe; ?></h3>
 
               <p>Mobiliers fixes</p>
             </div>
@@ -121,7 +155,7 @@
           <!-- small box -->
           <div class="small-box bg-maroon">
             <div class="inner">
-              <h3>65</h3>
+              <h3><?php echo $nbMobilierMobile; ?></h3>
 
               <p>Mobiliers mobiles</p>
             </div>

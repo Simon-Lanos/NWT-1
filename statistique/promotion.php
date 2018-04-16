@@ -1,4 +1,4 @@
-<?php include('header.html'); ?>
+<?php include('header.php'); ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -24,11 +24,6 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Promo Actuelle</h3>
 
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
                         </div>
                         <div class="box-body">
                             <div class="chart">
@@ -48,11 +43,6 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Promo Passée</h3>
 
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
                         </div>
                         <div class="box-body">
                             <div class="chart">
@@ -78,6 +68,25 @@
 <!-- FastClick -->
 <script>
     $(function () {
+
+        /* ESSAIE JSON / S AFFICHE DANS LA CONSOLE*/
+        function monCode()
+        {
+            if (req.readyState == 4)
+            {
+                var doc = eval('(' + req.responseText + ')');
+                console.log(req.responseText);
+                //console.log(doc.etudiant[1].groupe);
+
+                //MAINTENANT AVEC DE VRAI DONNEE PARCOURIR LE FICHIER JSON AVEC UNE BOUCLE
+            }
+        }
+
+        var req = new XMLHttpRequest();
+        req.open("GET", "promotion.json", true);
+        req.onreadystatechange = monCode;   // la fonction de prise en charge
+        req.send(null);
+
         /* ChartJS
          * -------
          * Here we will create a few charts using ChartJS
@@ -91,20 +100,30 @@
         var areaChartCanvas
 
         var areaChartData = {
-            labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels  : ['2017-2019', '2017-2018', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
-                    label               : 'Electronics',
+                    label               : '',
                     fillColor           : 'rgba(210, 214, 222, 1)',
                     strokeColor         : 'rgba(210, 214, 222, 1)',
-                    pointColor          : 'rgba(210, 214, 222, 1)',
+                    pointColor          : 'rgba(210, 90, 222, 1)',
                     pointStrokeColor    : '#c1c7d1',
                     pointHighlightFill  : '#fff',
                     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    data                : [65, 59, 80, 81, 56, 55, 40]
+                    data                : [65, 0, 80, 81, 56, 55, 40]
                 },
                 {
-                    label               : 'Digital Goods',
+                    label               : '',
+                    fillColor           : 'rgba(60,141,188,0.9)',
+                    strokeColor         : 'rgba(60,141,188,0.8)',
+                    pointColor          : '#3b8bba',
+                    pointStrokeColor    : 'rgba(60,141,188,1)',
+                    pointHighlightFill  : '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data                : [28, 0, 40, 19, 86, 27, 90]
+                },
+                {
+                    label               : '',
                     fillColor           : 'rgba(60,141,188,0.9)',
                     strokeColor         : 'rgba(60,141,188,0.8)',
                     pointColor          : '#3b8bba',
@@ -236,5 +255,3 @@
         barChart.Bar(barChartData, barChartOptions)
     })
 </script>
-</body>
-</html>

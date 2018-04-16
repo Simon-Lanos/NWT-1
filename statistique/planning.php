@@ -1,4 +1,4 @@
-<?php include ('header.html'); ?>
+<?php include('header.php'); ?>
 
 <link rel="stylesheet" type="text/css" href=../assets/css/calendar.css>
 
@@ -17,15 +17,53 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" style="margin-top: 30px">
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <!-- ./col -->
+            <div id="calendar"></div>
+        </div>
+
+    <!-- Légendes -->
+        <div class="row" style="margin-top: 100px">
+            <div class="col-md-3">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <p>Toutes les salles sont occupées</p>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-md-3">
+                    <div class="small-box bg-orange">
+                        <div class="inner">
+                            <p>2 salles sur 3 sont occupées</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-md-3">
+                        <div class="small-box bg-red">
+                            <div class="inner">
+                                <p>1 salle sur 3 est occupée</p>
+                            </div>
+                        </div>
+                </div>
+
+                    <div class="col-md-3">
+                        <div class="small-box bg-gray">
+                            <div class="inner">
+                                <p>Aucune salle n'est occupée</p>
+                            </div>
+                        </div>
+                    </div>
 
         </div>
-        <div id="calendar"></div>
-        <!-- /.row -->
 
+    <!-- /.Légendes -->
+
+        <!-- /.row -->
     </section>
     <!-- /.content -->
 </div>
@@ -213,7 +251,7 @@
             _initializeDatasourceColors: function() {
                 for(var i in this.options.dataSource) {
                     if(this.options.dataSource[i].color == null) {
-                        this.options.dataSource[i].color = colors[i % colors.length];
+                        this.options.dataSource[i].color = colors[i % colors.length]; //couleurs des jours//
                     }
                 }
             },
@@ -1068,17 +1106,17 @@
 
         var dates = $.fn.calendar.dates = {
             en: {
-                days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-                daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
-                months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                days: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+                daysShort: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+                daysMin: ["Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"],
+                months: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"],
+                monthsShort: ["Jan", "Fev", "Mar", "Avr", "Mai", "Jui", "Jui", "Aou", "Sep", "Oct", "Nov", "Dec"],
                 weekShort: 'W',
                 weekStart:0
             }
         };
 
-        var colors = $.fn.calendar.colors = ['#2C8FC9', '#9CB703', '#F5BB00', '#FF4A32', '#B56CE2', '#45A597'];
+        var colors = $.fn.calendar.colors = ['#00a65a', '#ff851b', '#dd4b39', '#d2d6de'];
 
         $(function(){
             $('[data-provide="calendar"]').each(function() {
