@@ -1,5 +1,4 @@
 <?php
-
 $firstName = 'connard';
 $lastName = 'de merde';
 $token = hash("sha256", crypt(microtime(), "NWTroll"));
@@ -7,19 +6,9 @@ echo $token;
 $tokenTime = date_format(date_create(),'Y-m-d H:i:s');
 echo $tokenTime;
 
-//$sql = 'UPDATE users SET userToken = ":token" WHERE userId = :userId
-//    ';
-
 $sql = 'SELECT userToken FROM nwtdb.users WHERE userId = "1"';
 $db = new DB();
 $stmt = $db->select($sql);
-
-//if (!isset($_GET['token'])) {
-//    return;
-//}
-//else {
-//    if ()
-//}
 
 $to = 'test@yolo.fr';
 $subject = 'yolo test';
@@ -40,3 +29,5 @@ $message = '
 $mail = new Mail($to, $subject, $message);
 $mail->sendMail();
 
+=======
+include './includes/log/enregistrement.php';

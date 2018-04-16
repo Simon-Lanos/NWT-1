@@ -20,3 +20,14 @@ spl_autoload_register('AutoLoad');
         </div>
     </body>
 </html>
+<body>
+<div id="container">
+    <?php
+//    include "./includes/header.php";
+    CallPage::display();
+//    include "./includes/footer.php";
+    ?>
+</div>
+</body>
+</html>
+

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: MARCALBANMILLET
- * Date: 11/04/2018
- * Time: 09:53
- */
 
 class DB
 {
@@ -28,7 +22,14 @@ class DB
 
 
     function select($sql) {
-        return $this -> db -> query($sql) ->fetch();
+        //var_dump($this->db->getAttribute(PDO::ATTR_DEFAULT_FETCH_MODE));
+        try {
+            $return = $this -> db -> query($sql)->fetch();
+        }
+        catch (PDOException $e) {
+            die($e);
+        }
+        return $return;
     }
 
 }
